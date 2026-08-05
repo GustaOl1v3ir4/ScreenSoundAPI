@@ -52,4 +52,18 @@ internal class LinqFilter
             Console.WriteLine($"- {musica}");
         }
     }
+
+    internal static void FiltrarMusicasDoSustenido(List<Musica> musicas)
+    {
+        var musicasEmDoSustenido = musicas
+            .Where(musica => musica.Tonalidade.Equals("C#"))
+            .Select(musica => musica.Nome)
+            .ToList();
+
+        Console.WriteLine("Musicas em Do Sustenido:");
+        foreach (var musica in musicasEmDoSustenido)
+        {
+            Console.WriteLine($"- {musica}");
+        }
+    }
 }
